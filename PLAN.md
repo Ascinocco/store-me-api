@@ -12,13 +12,6 @@
 	* Created At
 	* Updated At
 * Allow me to search my files
-* Allow me to set permissions on a file by:
-	* User
-	* Group / Team / Department
-	* Organization
-	* Role / Job
-	* X that is part of a group or team
-	* Custom Rule 
 * Allow me to share a file by link
 	* Allow me to set opens on shared link
 	* Should it expire
@@ -57,3 +50,7 @@
 	* bug
 	* enhancement
 	* change-request
+
+---
+### Points and Estimation
+* 1 point = 1 hour
