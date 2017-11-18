@@ -30,6 +30,9 @@ class User extends Model {
     return this.hasMany('App/Models/Token')
   }
 
+  /**
+   * A relationship defining that a user can have many files
+   */
   files () {
     return this.hasMany('App/Models/Files')
   }
