@@ -53,7 +53,6 @@
 ---
 ### Gitflow
 * master
-* dev
 	* feature
 	* bug
 	* enhancement
