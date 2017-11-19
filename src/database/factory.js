@@ -14,6 +14,27 @@
 const Factory = use('Factory')
 const Hash = use('Hash')
 
+const getFileType = () => (
+  ((Math.random() * (10 - 0) + 0) >= 5) ? 'file' : 'folder'
+);
+
+const getNumBetweenOneAndTen = () => (
+  Math.round((Math.random() * (10 - 1) + 1))
+);
+
+const getViewers = () => {
+  let viewers = []
+
+  for (let i = 0; i < 2; i++) {
+    viewers.push({
+      id: getNumBetweenOneAndTen()
+    })
+  }
+
+  return viewers
+}
+
+// users
 Factory.blueprint('App/Models/User', async (faker) => {
   return {
     firstName: faker.first(),
@@ -21,6 +42,20 @@ Factory.blueprint('App/Models/User', async (faker) => {
     lastName: faker.last(),
     email: faker.email(),
     password: await Hash.make(faker.password())
+  }
+})
+
+// files
+Factory.blueprint('App/Models/File', async (faker) => {
+  return {
+    name: `${faker.hash({ length: 50 })}.txt`,
+    type: getFileType(),
+    extension: 'txt',
+    'owner_id': getNumBetweenOneAndTen(),
+    // viewers: JSON.stringify(getViewers()),
+    'viewer_id': 1,
+    favorite: faker.bool(),
+    pinned: faker.bool(),
   }
 })
 
