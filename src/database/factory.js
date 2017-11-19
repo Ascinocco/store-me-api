@@ -19,13 +19,13 @@ const getFileType = () => (
 );
 
 const getNumBetweenOneAndTen = () => (
-  (Math.random() * (10 - 1) + 1)
+  Math.round((Math.random() * (10 - 1) + 1))
 );
 
 const getViewers = () => {
   let viewers = []
 
-  for (i = 0; i < 10; i++) {
+  for (let i = 0; i < 10; i++) {
     viewers.push({
       id: getNumBetweenOneAndTen()
     })
@@ -52,7 +52,7 @@ Factory.blueprint('App/Models/File', async (faker) => {
     type: getFileType(),
     extension: 'txt',
     'owner_id': getNumBetweenOneAndTen(),
-    viewers: getViewers(),
+    viewers: JSON.stringify(getViewers()),
     favorite: faker.bool(),
     pinned: faker.bool(),
   }
