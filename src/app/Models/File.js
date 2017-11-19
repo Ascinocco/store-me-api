@@ -7,7 +7,7 @@ class File extends Model {
    * A relationship for the file to know who owns it
    */
   owner () {
-    return this.hasOne('App/Models/User')
+    return this.belongsTo('App/Models/User')
   }
 
   /**
