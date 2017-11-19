@@ -15,8 +15,12 @@
 
 const Route = use('Route')
 
-Route.get('/', ({ request }) => {
-  return { greeting: 'Hello world in JSON' }
-})
+const filesPrefix = '/files';
 
-Route.get('/files', 'FileController.index')
+// Api Route Group
+Route.group(() => {
+
+  // files routes
+  Route.get(`${filesPrefix}`, 'FileController.index')
+
+}).prefix('api/v1/').formats(['json'])
