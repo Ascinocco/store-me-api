@@ -31,7 +31,9 @@ Route.group(() => {
   Route.post('/sign-out', 'AuthController.signOut');
 
   // user routes
-  Route.post(`${userPrefix}/new`, 'UserController.create');
+  Route
+    .post(`${userPrefix}/new`, 'UserController.create')
+    .validator('StoreUser');
 
   // example routes
   Route.get(`${examplePrefix}`, 'FileController.index');
