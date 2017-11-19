@@ -14,7 +14,7 @@ class File extends Model {
    * A relationship for the file to know who can view it
    */
   viewers () {
-    return this.hasMany('App/Models/User')
+    return this.hasMany('App/Models/User', 'id', 'viewer_id')
   }
 }
 

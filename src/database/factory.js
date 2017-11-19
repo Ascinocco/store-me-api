@@ -53,6 +53,7 @@ Factory.blueprint('App/Models/File', async (faker) => {
     extension: 'txt',
     'owner_id': getNumBetweenOneAndTen(),
     // viewers: JSON.stringify(getViewers()),
+    'viewer_id': 1,
     favorite: faker.bool(),
     pinned: faker.bool(),
   }

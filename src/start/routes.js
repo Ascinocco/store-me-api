@@ -25,5 +25,6 @@ Route.group(() => {
   Route.get(`${filesPrefix}/example`, 'FileController.example')
   Route.get(`${filesPrefix}/files`, 'FileController.files')
   Route.get(`${filesPrefix}/restrictedFiles`, 'FileController.restrictedFiles')
+  Route.get(`${filesPrefix}/relationships`, 'FileController.relationships')
 
 }).prefix('api/v1/').formats(['json'])

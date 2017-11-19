@@ -24,6 +24,27 @@ class FileController {
     const file = await File.find(4);
     return file;
   }
+
+  async relationships () {
+
+    const user = await User.find(3);
+    const tokens = user.tokens;
+
+    const file = await File.find(3);
+    const owner = file.owner;
+
+    const viewers = file.viewers;
+
+    return {
+      tokens,
+      owner,
+      viewers,
+    }
+  }
+
+  async dogshit () {
+    const user = new User();
+  }
 }
 
 module.exports = FileController
