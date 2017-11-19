@@ -2,7 +2,7 @@
 
 const User = user('App/Models/User');
 
-class AuthController {  
+class AuthController {
   async signIn() {
 
   }
