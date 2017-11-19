@@ -34,7 +34,7 @@ class User extends Model {
    * A relationship defining that a user can have many files
    */
   files () {
-    return this.hasMany('App/Models/Files')
+    return this.hasMany('App/Models/File', 'id', 'owner_id')
   }
 }
 

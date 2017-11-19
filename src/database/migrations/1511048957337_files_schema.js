@@ -9,6 +9,7 @@ class FilesSchema extends Schema {
       table.string('name', 254).notNullable().unique()
       table.string('type', 80).notNullable() // file or folder
       table.string('extension', 20).notNullable()
+      table.integer('owner_id').unsigned().notNullable()
       table.boolean('favorite').notNullable().default(false)
       table.boolean('pinned').notNullable().default(false)
       table.timestamps()

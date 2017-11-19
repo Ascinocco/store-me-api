@@ -35,6 +35,7 @@ Factory.blueprint('App/Models/File', async (faker) => {
     name: `${faker.hash({ length: 50 })}.txt`,
     type: getFileType(),
     extension: 'txt',
+    'owner_id': (Math.random() * (10 - 1) + 1),
     favorite: faker.bool(),
     pinned: faker.bool(),
   }
