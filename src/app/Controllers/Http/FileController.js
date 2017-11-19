@@ -11,7 +11,12 @@ class FileController {
   async example () {
     const user = await User.find(7)
     const userFiles = await user.files().fetch()
-    return userFiles;
+    return userFiles
+  }
+
+  async files () {
+    const files = await File.findBy('owner_id', 2)
+    return files
   }
 }
 
