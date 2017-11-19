@@ -20,12 +20,20 @@ const apiPrefix = 'api';
 const apiVersion = 'v1';
 
 // route prefix's
+const userPrefix = '/user';
+const filePrefix = '/files';
 const examplePrefix = '/examples'
-const filesPrefix = '/files';
 
 Route.group(() => {
 
-  // files routes
+  // sign in / out
+  Route.post('/sign-in', 'AuthController.signIn');
+  Route.post('/sign-out', 'AuthController.signOut');
+
+  // user routes
+  Route.post(`${userPrefix}/new`, 'UserController.create');
+
+  // example routes
   Route.get(`${examplePrefix}`, 'FileController.index');
   Route.get(`${examplePrefix}/getFiles`, 'FileController.getFiles');
   Route.get(`${examplePrefix}/getViewers`, 'FileController.addViewers');
