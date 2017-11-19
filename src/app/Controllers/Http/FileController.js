@@ -18,6 +18,12 @@ class FileController {
     const files = await File.findBy('owner_id', 2)
     return files
   }
+
+  async restrictedFiles () {
+    const loggedInUserId = 2;
+    const file = await File.find(4);
+    return file;
+  }
 }
 
 module.exports = FileController

@@ -25,7 +25,7 @@ const getNumBetweenOneAndTen = () => (
 const getViewers = () => {
   let viewers = []
 
-  for (let i = 0; i < 10; i++) {
+  for (let i = 0; i < 2; i++) {
     viewers.push({
       id: getNumBetweenOneAndTen()
     })
@@ -52,7 +52,7 @@ Factory.blueprint('App/Models/File', async (faker) => {
     type: getFileType(),
     extension: 'txt',
     'owner_id': getNumBetweenOneAndTen(),
-    viewers: JSON.stringify(getViewers()),
+    // viewers: JSON.stringify(getViewers()),
     favorite: faker.bool(),
     pinned: faker.bool(),
   }
