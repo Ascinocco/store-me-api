@@ -14,6 +14,11 @@
 const Factory = use('Factory')
 const Hash = use('Hash')
 
+const getFileType = () => (
+  ((Math.random() * (10 - 0) + 0) >= 5) ? 'file' : 'folder'
+);
+
+// users
 Factory.blueprint('App/Models/User', async (faker) => {
   return {
     firstName: faker.first(),
@@ -21,6 +26,17 @@ Factory.blueprint('App/Models/User', async (faker) => {
     lastName: faker.last(),
     email: faker.email(),
     password: await Hash.make(faker.password())
+  }
+})
+
+// files
+Factory.blueprint('App/Models/File', async (faker) => {
+  return {
+    name: `${faker.hash({ length: 50 })}.txt`,
+    type: getFileType(),
+    extension: 'txt',
+    favorite: faker.bool(),
+    pinned: faker.bool(),
   }
 })
 
