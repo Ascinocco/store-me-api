@@ -28,7 +28,7 @@ Route.group(() => {
 
   // sign in / out
   Route.post('/sign-in', 'AuthController.signIn');
-  Route.post('/sign-out', 'AuthController.signOut');
+  Route.post('/sign-out', 'AuthController.signOut').middleware('auth');
 
   // user routes
   Route
