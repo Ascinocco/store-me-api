@@ -24,6 +24,7 @@ const userPrefix = '/user';
 const filePrefix = '/files';
 const examplePrefix = '/examples'
 
+// @TODO: add middleware to check if token is black listed
 Route.group(() => {
 
   // sign in / out
